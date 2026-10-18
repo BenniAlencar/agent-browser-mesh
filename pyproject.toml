@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-browser-mesh"
+version = "1.0.0"
+description = "High-speed, zero-token-waste autonomous browser engine with semantic DOM-Delta compaction, anti-injection guardrails, and native MCP server for AI agents."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [
+    { name = "Benni Alencar", email = "benni@benni.ai" }
+]
+keywords = [
+    "browser-agent",
+    "ai-agents",
+    "web-automation",
+    "mcp",
+    "model-context-protocol",
+    "dom-delta",
+    "zero-token",
+    "cybersecurity",
+    "prompt-injection-defense",
+    "playwright"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "Topic :: Security",
+]
+dependencies = [
+    "pydantic>=2.0.0",
+    "beautifulsoup4>=4.12.0",
+    "click>=8.1.0",
+    "typing-extensions>=4.6.0"
+]
+
+[project.optional-dependencies]
+playwright = [
+    "playwright>=1.40.0"
+]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "build>=1.0.0",
+    "twine>=4.0.0"
+]
+
+[project.scripts]
+agent-browser = "agent_browser_mesh.cli:main"
+browser-mesh = "agent_browser_mesh.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/BenniAlencar/agent-browser-mesh"
+Documentation = "https://github.com/BenniAlencar/agent-browser-mesh#readme"
+Repository = "https://github.com/BenniAlencar/agent-browser-mesh.git"
+Issues = "https://github.com/BenniAlencar/agent-browser-mesh/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_browser_mesh"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
