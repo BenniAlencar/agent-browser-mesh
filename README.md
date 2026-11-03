@@ -132,6 +132,7 @@ agent-browser mcp
 ### Open-Source Infrastructure Primaries
 * **[`agent-cyber-sentinel`](https://github.com/BenniAlencar/agent-cyber-sentinel)**: Tier-0 runtime security shield & prompt injection firewall (<0.4ms).
 * **[`agent-code-sandbox`](https://github.com/BenniAlencar/agent-code-sandbox)**: Micro-second zero-dependency code sandbox with AST security guards & context token shielding.
+* **[`agent-eval-harness`](https://github.com/BenniAlencar/agent-eval-harness)**: Deterministic zero-cloud agent evaluation & red-teaming harness with cryptographic audit receipts.
 * **[`agent-run-ledger`](https://github.com/BenniAlencar/agent-run-ledger)**: Crash-resilient durable execution state machine & anti-loop circuit breaker.
 * **[`reality-lock`](https://github.com/BenniAlencar/reality-lock)**: Cryptographic execution verification & non-repudiation receipts.
 * **[`agent-memory-mesh`](https://github.com/BenniAlencar/agent-memory-mesh)**: Bi-temporal causality knowledge graph & 74% lossless context compression.
