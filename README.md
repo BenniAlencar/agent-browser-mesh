@@ -135,6 +135,7 @@ agent-browser mcp
 * **[`reality-lock`](https://github.com/BenniAlencar/reality-lock)**: Cryptographic execution verification & non-repudiation receipts.
 * **[`agent-memory-mesh`](https://github.com/BenniAlencar/agent-memory-mesh)**: Bi-temporal causality knowledge graph & 74% lossless context compression.
 * **[`agent-browser-mesh`](https://github.com/BenniAlencar/agent-browser-mesh)**: High-speed, zero-token-waste autonomous browser engine with native MCP.
+* **[`agent-deep-research`](https://github.com/BenniAlencar/agent-deep-research)**: Autonomous multi-source deep research engine with cryptographic citation proofs & >85% token distillation.
 
 ### Benni-OS Organization Repositories
 * **[`benni-inference-engine`](https://github.com/Benni-OS/benni-inference-engine)**: MoE hybrid layer offloading engine for consumer GPUs.
