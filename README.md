@@ -1,22 +1,30 @@
 <div align="center">
 
-# 🌐 agent-browser-mesh
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D0D0D,50:1a1a2e,100:7000FF&height=200&section=header&text=agent-browser-mesh&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Token-Saving%20Resilient%20Headless%20Browser%20Automation%20%26%20A11y%20DOM%20Compiler&descAlignY=58&descSize=16&animation=fadeIn" width="100%"/>
 
-### High-Speed, Zero-Token-Waste Autonomous Browser Engine for AI Agents
+<br/>
 
-[![PyPI version](https://img.shields.io/pypi/v/agent-browser-mesh.svg?style=flat-square&color=00ffcc)](https://pypi.org/project/agent-browser-mesh/)
-[![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-38bdf8?style=flat-square)](https://pypi.org/project/agent-browser-mesh/)
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-14%20passed-22c55e?style=flat-square)](tests/)
-[![MCP](https://img.shields.io/badge/MCP-native%20server-a855f7?style=flat-square)](src/agent_browser_mesh/mcp_server.py)
+[![PyPI](https://img.shields.io/pypi/v/agent-browser-mesh?style=for-the-badge&color=7000FF&logo=pypi&logoColor=white)](https://pypi.org/project/agent-browser-mesh/)
+[![CI](https://img.shields.io/github/actions/workflow/status/BenniAlencar/agent-browser-mesh/test.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI)](https://github.com/BenniAlencar/agent-browser-mesh/actions/workflows/test.yml)
+[![Tests](https://img.shields.io/badge/Tests-14%20Passed-00C853?style=for-the-badge&logo=pytest&logoColor=white)](tests/)
+[![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-7000FF?style=for-the-badge&logo=python&logoColor=white)](https://pypi.org/project/agent-browser-mesh/)
+[![MCP](https://img.shields.io/badge/MCP-Native%20Server-8a2be2?style=for-the-badge)](src/agent_browser_mesh/mcp_server.py)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-00C853?style=for-the-badge&logo=apache&logoColor=white)](LICENSE)
+[![Glama MCP Server](https://glama.ai/mcp/servers/bfr5it8nq4/badge)](https://glama.ai/mcp/servers/bfr5it8nq4)
+[![Benni OS](https://img.shields.io/badge/Benni%20OS-benni--os.net-0D0D0D?style=for-the-badge)](https://benni-os.net)
 
-**Eliminates the 1,500-token vision tax. Built-in Tier-0 indirect prompt injection firewall (<0.4ms overhead), semantic multi-attribute element grounding, and native Model Context Protocol (MCP) server.**
+<br/>
 
-[Quick Start](#-quick-start) • [Architecture](#-architecture) • [Benchmarks vs Global Tools](#-benchmarks-vs-global-competitors) • [MCP Setup](#-claude-desktop--cursor-mcp-integration) • [Ecosystem Matrix](#-benni-os-ecosystem)
+> **High-Speed, Zero-Token-Waste Autonomous Browser Engine for AI Agents & MCP.**  
+> Eliminates the 1,500-token vision tax. Built-in Tier-0 indirect prompt injection firewall (<0.4ms overhead), semantic multi-attribute element grounding, and native Model Context Protocol (MCP) server.
 
----
+<br/>
 
-<img src="assets/demo.svg" width="100%" alt="Agent Browser Mesh Demo" />
+<img src="assets/demo.svg" alt="Agent Browser Mesh Demo" width="100%"/>
+
+<br/>
+
+[Quick Start](#-quick-start) • [Architecture](#-the-agent-browser-mesh-architecture) • [Benchmarks vs Global Competitors](#-benchmarks-vs-global-competitors) • [MCP Setup](#-claude-desktop--cursor-mcp-integration) • [Ecosystem](#-the-benni-os-open-source-ecosystem)
 
 </div>
 
@@ -30,7 +38,9 @@ Current browser automation libraries like `browser-use`, `stagehand`, and `skyve
 2. **Brittle Numeric/XPath Grounding:** Floating numeric bounding boxes or raw XPaths invalidate the moment React or Vue components re-render during hydration, causing hallucinated clicks.
 3. **Zero Pre-Execution Guardrails:** Ingesting untrusted third-party DOM text directly into LLM context leaves agents completely vulnerable to **Indirect Prompt Injection** hidden in CSS or comments.
 
-## 💎 The `agent-browser-mesh` Superiority
+---
+
+## 🏗️ The `agent-browser-mesh` Architecture
 
 - ⚡ **92%+ Token Reduction (DOM-Delta A11y Tree):** Compiles the web accessibility tree into a compact semantic markdown view (<120 tokens/action). Vision screenshots are only triggered as an emergency fallback on canvas or visual ambiguity.
 - 🎯 **Semantic Fingerprinting:** Anchors elements by invariant tuples `(role, aria-label, text_hash, quadrant)`. Immune to Tailwind class scrambles and DOM re-ordering.
@@ -40,12 +50,12 @@ Current browser automation libraries like `browser-use`, `stagehand`, and `skyve
 
 ---
 
-## 📊 Benchmarks vs Global Competitors
+## 🏆 Benchmarks vs Global Competitors
 
 Empirical comparison on real-world multi-step web tasks (E-commerce Checkout & Documentation Search):
 
 | Metric | `browser-use` (118k ⭐) | `stagehand` (25k ⭐) | `skyvern` (23k ⭐) | **`agent-browser-mesh` (Ours)** |
-|---|:---:|:---:|:---:|:---:|
+| :--- | :---: | :---: | :---: | :---: |
 | **Token Cost per Action** | ~1,500 tokens (Vision) | ~800 tokens | ~2,000 tokens | **⚡ <120 tokens (92% cheaper)** |
 | **Action Execution Latency** | ~4,500 ms | ~3,800 ms | ~8,200 ms | **⚡ <650 ms (CDP Native)** |
 | **Prompt Injection Defense** | ❌ None | ❌ None | ❌ None | **🛡️ Built-in SG-5 Real-time Firewall** |
@@ -89,9 +99,22 @@ print(click_res.message)
 data = mesh.extract()
 ```
 
+### 3. Command-Line Interface (CLI)
+
+```bash
+# Inspect any URL and view token compression analysis
+agent-browser inspect https://github.com/trending
+
+# Run token savings benchmark
+agent-browser benchmark
+
+# Start native MCP stdio server
+agent-browser mcp
+```
+
 ---
 
-## 🔌 Claude Desktop & Cursor MCP Integration
+## 🏗️ Claude Desktop & Cursor MCP Integration
 
 Add `agent-browser-mesh` directly to your `claude_desktop_config.json`:
 
@@ -110,44 +133,53 @@ Now your AI coding agent has native, high-speed web browsing with zero vision to
 
 ---
 
-## 🛠️ Command-Line Interface (CLI)
+## 🌐 The Benni OS Open-Source Ecosystem
 
-```bash
-# Inspect any URL and view token compression analysis
-agent-browser inspect https://github.com/trending
+`agent-browser-mesh` is part of the coordinated **Benni Master OS v9.4** open-source infrastructure suite:
 
-# Run token savings benchmark
-agent-browser benchmark
-
-# Start native MCP stdio server
-agent-browser mcp
-```
-
----
-
-## 🌐 Benni OS Ecosystem
-
-`agent-browser-mesh` is the action & web perception primitive of the **Benni OS** sovereign architecture.
-
-### Open-Source Infrastructure Primaries
-* **[`agent-cyber-sentinel`](https://github.com/BenniAlencar/agent-cyber-sentinel)**: Tier-0 runtime security shield & prompt injection firewall (<0.4ms).
-* **[`agent-code-sandbox`](https://github.com/BenniAlencar/agent-code-sandbox)**: Micro-second zero-dependency code sandbox with AST security guards & context token shielding.
-* **[`agent-eval-harness`](https://github.com/BenniAlencar/agent-eval-harness)**: Deterministic zero-cloud agent evaluation & red-teaming harness with cryptographic audit receipts.
-* **[`agent-run-ledger`](https://github.com/BenniAlencar/agent-run-ledger)**: Crash-resilient durable execution state machine & anti-loop circuit breaker.
-* **[`reality-lock`](https://github.com/BenniAlencar/reality-lock)**: Cryptographic execution verification & non-repudiation receipts.
-* **[`agent-memory-mesh`](https://github.com/BenniAlencar/agent-memory-mesh)**: Bi-temporal causality knowledge graph & 74% lossless context compression.
-* **[`agent-browser-mesh`](https://github.com/BenniAlencar/agent-browser-mesh)**: High-speed, zero-token-waste autonomous browser engine with native MCP.
-* **[`agent-deep-research`](https://github.com/BenniAlencar/agent-deep-research)**: Autonomous multi-source deep research engine with cryptographic citation proofs & >85% token distillation.
-
-### Benni-OS Organization Repositories
-* **[`benni-inference-engine`](https://github.com/Benni-OS/benni-inference-engine)**: MoE hybrid layer offloading engine for consumer GPUs.
-* **[`benni-operator-gateway`](https://github.com/Benni-OS/benni-operator-gateway)**: Enterprise MCP gateway over HTTP with role-based governance.
-* **[`mcp-forge`](https://github.com/Benni-OS/mcp-forge)**: FastAPI-style declarative Python SDK for building production MCP servers.
-* **[`benni-nexus`](https://github.com/Benni-OS/benni-nexus)**: Intelligent LLM cost/latency router & auto-failover circuit.
-* **[`community-autopilot`](https://github.com/Benni-OS/community-autopilot)**: Autonomous GitHub community triage & SLA review bot.
+| Repository | Focus & Architecture | Stars |
+| :--- | :--- | :---: |
+| **[`conductor-sdd`](https://github.com/Benni-OS/conductor-sdd)** | Zero-Dependency Spec-Driven Development, Static AST Drift Detector & MCP Guardrail | [![GitHub Stars](https://img.shields.io/github/stars/Benni-OS/conductor-sdd?style=flat)](https://github.com/Benni-OS/conductor-sdd) |
+| **[`benni-inference-engine`](https://github.com/Benni-OS/benni-inference-engine)** | High-Throughput Sovereign Local Inference for 8GB–16GB Consumer GPUs | [![GitHub Stars](https://img.shields.io/github/stars/Benni-OS/benni-inference-engine?style=flat)](https://github.com/Benni-OS/benni-inference-engine) |
+| **[`agent-eval-harness`](https://github.com/BenniAlencar/agent-eval-harness)** | Deterministic Zero-Cloud Agent Evaluation, Red-Teaming & Benchmark Harness | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-eval-harness?style=flat)](https://github.com/BenniAlencar/agent-eval-harness) |
+| **[`agent-code-sandbox`](https://github.com/BenniAlencar/agent-code-sandbox)** | Micro-Second Zero-Dependency Code Sandbox & Execution Shield for AI Agents | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-code-sandbox?style=flat)](https://github.com/BenniAlencar/agent-code-sandbox) |
+| **[`agent-deep-research`](https://github.com/BenniAlencar/agent-deep-research)** | Autonomous Multi-Source Deep Research & Evidence Synthesis Engine | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-deep-research?style=flat)](https://github.com/BenniAlencar/agent-deep-research) |
+| **[`agent-browser-mesh`](https://github.com/BenniAlencar/agent-browser-mesh)** | Token-Saving Resilient Headless Browser Automation & A11y DOM Compiler | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-browser-mesh?style=flat)](https://github.com/BenniAlencar/agent-browser-mesh) |
+| **[`agent-intent-compiler`](https://github.com/BenniAlencar/agent-intent-compiler)** | Deterministic Intent Compiler & Typed DAG Execution Planner for AI Agents | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-intent-compiler?style=flat)](https://github.com/BenniAlencar/agent-intent-compiler) |
+| **[`agent-token-optimizer`](https://github.com/BenniAlencar/agent-token-optimizer)** | Sub-Millisecond Context Compression & Semantic Deduplication Engine | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-token-optimizer?style=flat)](https://github.com/BenniAlencar/agent-token-optimizer) |
+| **[`bio-sync-operator-os`](https://github.com/BenniAlencar/bio-sync-operator-os)** | Real-Time Biometric Swarm Governance & 120 FPS Resonant Kinetic Interface | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/bio-sync-operator-os?style=flat)](https://github.com/BenniAlencar/bio-sync-operator-os) |
+| **[`agent-cyber-sentinel`](https://github.com/BenniAlencar/agent-cyber-sentinel)** | Zero-Trust Runtime Security, Prompt Injection Firewall & Secrets Redaction | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-cyber-sentinel?style=flat)](https://github.com/BenniAlencar/agent-cyber-sentinel) |
+| **[`agent-run-ledger`](https://github.com/BenniAlencar/agent-run-ledger)** | Deterministic Multi-Step Task Execution Ledger & Anti-Looping Engine | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-run-ledger?style=flat)](https://github.com/BenniAlencar/agent-run-ledger) |
+| **[`reality-lock`](https://github.com/BenniAlencar/reality-lock)** | Cryptographic State Verification & Invariant Proof Engine for Agents | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/reality-lock?style=flat)](https://github.com/BenniAlencar/reality-lock) |
+| **[`agent-memory-mesh`](https://github.com/BenniAlencar/agent-memory-mesh)** | Hybrid Vector + BM25 Hierarchical Session Memory & Continuity Engine | [![GitHub Stars](https://img.shields.io/github/stars/BenniAlencar/agent-memory-mesh?style=flat)](https://github.com/BenniAlencar/agent-memory-mesh) |
+| **[`benni-operator-gateway`](https://github.com/Benni-OS/benni-operator-gateway)** | Human-in-the-Loop Approval & Policy Enforcement Gateway | [![GitHub Stars](https://img.shields.io/github/stars/Benni-OS/benni-operator-gateway?style=flat)](https://github.com/Benni-OS/benni-operator-gateway) |
+| **[`mcp-forge`](https://github.com/Benni-OS/mcp-forge)** | Rapid Model Context Protocol (MCP) Server Scaffolding & Dynamic Tooling | [![GitHub Stars](https://img.shields.io/github/stars/Benni-OS/mcp-forge?style=flat)](https://github.com/Benni-OS/mcp-forge) |
+| **[`benni-nexus`](https://github.com/Benni-OS/benni-nexus)** | Autonomous Multi-Agent Intent Routing & Swarm Coordination Hub | [![GitHub Stars](https://img.shields.io/github/stars/Benni-OS/benni-nexus?style=flat)](https://github.com/Benni-OS/benni-nexus) |
+| **[`community-autopilot`](https://github.com/Benni-OS/community-autopilot)** | Autonomous GitHub Community Triaging & PR Feedback Agent | [![GitHub Stars](https://img.shields.io/github/stars/Benni-OS/community-autopilot?style=flat)](https://github.com/Benni-OS/community-autopilot) |
 
 ---
 
-## 📜 License
+## 🏛️ Commercial & Sovereign Architecture
 
-Distributed under the **Apache-2.0** License. See [LICENSE](LICENSE) for details.
+Need autonomous multi-agent swarm orchestration, private datacenter infrastructure, or enterprise governance?
+
+- **Official Website:** [https://benni-os.net](https://benni-os.net)
+- **Operator Mode Playbook:** [https://benni-os.net/blog/academy.html](https://benni-os.net/blog/academy.html)
+- **GitHub Organization:** [https://github.com/Benni-OS](https://github.com/Benni-OS)
+- **Maintainer:** [Benni Alencar](https://github.com/BenniAlencar)
+
+---
+
+## 📄 License & Provenance
+
+- **License:** Distributed under the [Apache License, Version 2.0](LICENSE) (`Apache-2.0`).
+- **Author:** Benni Alencar (`benni@benni.ai`)
+- **Architecture:** Benni Master OS v9.4 Tier-0 Governance Standard
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7000FF,50:1a1a2e,100:0D0D0D&height=120&section=footer" width="100%"/>
+
+**agent-browser-mesh** — *Token-Saving Resilient Headless Browser Automation & A11y DOM Compiler* • [benni-os.net](https://benni-os.net) • `Apache-2.0 License`
+
+</div>
