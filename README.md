@@ -20,7 +20,7 @@
 
 <br/>
 
-<img src="assets/demo.svg" alt="Agent Browser Mesh Demo" width="100%"/>
+<img src="assets/demo.gif" alt="Agent Browser Mesh Demo" width="100%"/>
 
 <br/>
 
