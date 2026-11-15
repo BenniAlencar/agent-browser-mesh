@@ -6,7 +6,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/agent-browser-mesh?style=for-the-badge&color=7000FF&logo=pypi&logoColor=white)](https://pypi.org/project/agent-browser-mesh/)
 [![CI](https://img.shields.io/github/actions/workflow/status/BenniAlencar/agent-browser-mesh/test.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI)](https://github.com/BenniAlencar/agent-browser-mesh/actions/workflows/test.yml)
-[![Tests](https://img.shields.io/badge/Tests-14%20Passed-00C853?style=for-the-badge&logo=pytest&logoColor=white)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-18%20Passed-00C853?style=for-the-badge&logo=pytest&logoColor=white)](tests/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-7000FF?style=for-the-badge&logo=python&logoColor=white)](https://pypi.org/project/agent-browser-mesh/)
 [![MCP](https://img.shields.io/badge/MCP-Native%20Server-8a2be2?style=for-the-badge)](src/agent_browser_mesh/mcp_server.py)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-00C853?style=for-the-badge&logo=apache&logoColor=white)](LICENSE)
@@ -41,6 +41,35 @@ Current browser automation libraries like `browser-use`, `stagehand`, and `skyve
 ---
 
 ## 🏗️ The `agent-browser-mesh` Architecture
+
+```text
+  Claude Code / Cursor / Codex / Autonomous Web Agents
+         │
+         ├──► Python SDK  BrowserMesh.navigate() / snapshot() / click()
+         └──► STDIO JSON-RPC 2.0 (agent-browser mcp)
+                       │
+                       ▼
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │                     agent-browser-mesh (ABM)                        │
+  │                                                                     │
+  │  ┌───────────────────┐  ┌───────────────────┐  ┌─────────────────┐  │
+  │  │  Tier-0 Guard     │  │  DOM-Delta A11y   │  │  Semantic       │  │
+  │  │  (SG-4 & SG-5)    │─►│  Compiler         │─►│  Fingerprinting │  │
+  │  │ • SSRF / RFC1918  │  │ • >90% Token Save │  │ • Invariant Hash│  │
+  │  │ • Prompt Shield   │  │ • Noise Stripping │  │ • Fuzzy Anchor  │  │
+  │  └───────────────────┘  └───────────────────┘  └─────────────────┘  │
+  │                                                                     │
+  │  ┌───────────────────┐  ┌───────────────────┐  ┌─────────────────┐  │
+  │  │  Action Executor  │  │  Live Telemetry   │  │ Browser Doctor  │  │
+  │  │  (Click / Type)   │  │  & Health Monitor │  │ & Bench Matrix  │  │
+  │  │ • CDP / HTTP Core │  │ • P50/P90/P99 ms  │  │ • Guard Probe   │  │
+  │  └───────────────────┘  └───────────────────┘  └─────────────────┘  │
+  └─────────────────────────────────────────────────────────────────────┘
+         │                                         │
+         ▼                                         ▼
+   Compact DOMDelta (<150 tokens)           ActionResult & Audit Trail
+   (Markdown View + Anchor Registry)        (SSRF & Injection Verdicts)
+```
 
 - ⚡ **92%+ Token Reduction (DOM-Delta A11y Tree):** Compiles the web accessibility tree into a compact semantic markdown view (<120 tokens/action). Vision screenshots are only triggered as an emergency fallback on canvas or visual ambiguity.
 - 🎯 **Semantic Fingerprinting:** Anchors elements by invariant tuples `(role, aria-label, text_hash, quadrant)`. Immune to Tailwind class scrambles and DOM re-ordering.
@@ -130,6 +159,43 @@ Add `agent-browser-mesh` directly to your `claude_desktop_config.json`:
 ```
 
 Now your AI coding agent has native, high-speed web browsing with zero vision token waste and built-in prompt injection defense!
+
+---
+
+## 📁 Project Structure
+
+```text
+agent-browser-mesh/
+├── src/agent_browser_mesh/
+│   ├── __init__.py                   # Backwards-compatible public API exports
+│   ├── cli.py                        # CLI entrypoint bridge
+│   ├── core/
+│   │   ├── __init__.py               # Core browser mesh primitives package
+│   │   ├── actions.py                # Deterministic ActionExecutor (click, type, extract)
+│   │   ├── dom_compiler.py           # Semantic DOM-Delta compiler (>90% token savings)
+│   │   ├── engine.py                 # BrowserMesh session & navigation orchestrator
+│   │   ├── fingerprint.py            # Multi-attribute invariant SemanticAnchor & registry
+│   │   └── guardrails.py             # SG-4 SSRF gate & SG-5 prompt-injection sanitizer
+│   ├── serve/
+│   │   ├── __init__.py               # Serving & observability exports
+│   │   ├── __main__.py               # Unified Click CLI (inspect, mcp, doctor, matrix, health)
+│   │   ├── health_monitor.py         # DOMCompiler & BrowserGuardrails health probe
+│   │   ├── mcp_bridge.py             # Native MCP JSON-RPC 2.0 stdio server
+│   │   └── telemetry.py              # Thread-safe P50/P90/P99 latency & savings telemetry
+│   └── tools/
+│       ├── __init__.py               # Diagnostics & benchmarking exports
+│       ├── bench_matrix.py           # Multi-page DOM-Delta compaction matrix
+│       └── doctor.py                 # End-to-end browser mesh diagnostic probe
+├── examples/
+│   ├── quickstart_browser_mesh.py    # Minimal offline DOM-Delta & anchor click example
+│   └── guardrails_and_telemetry.py   # SSRF blocking, prompt sanitization & telemetry
+├── scripts/
+│   ├── benchmark_dom_delta.py        # Multi-page DOM-Delta compaction benchmark
+│   └── gate_ssrf_guardrails.py       # SSRF, injection & runtime health gate runner
+├── docs/
+│   └── ARCHITECTURE.md               # Three-tier package architecture reference
+└── tests/                            # Full pytest suite (18 tests)
+```
 
 ---
 

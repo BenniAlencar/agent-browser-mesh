@@ -15,10 +15,10 @@ import urllib.error
 
 from pydantic import BaseModel, Field
 
-from agent_browser_mesh.guardrails import BrowserGuardrails, SecurityVerdict
-from agent_browser_mesh.dom_compiler import DOMCompiler, DOMDelta
-from agent_browser_mesh.actions import ActionExecutor, ActionResult
-from agent_browser_mesh.fingerprint import SemanticAnchor
+from .guardrails import BrowserGuardrails, SecurityVerdict
+from .dom_compiler import DOMCompiler, DOMDelta
+from .actions import ActionExecutor, ActionResult
+from .fingerprint import SemanticAnchor
 
 
 class BrowserSessionState(BaseModel):

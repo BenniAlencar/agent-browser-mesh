@@ -2,12 +2,21 @@
 
 __version__ = "1.0.0"
 
-from agent_browser_mesh.core import BrowserMesh, BrowserSessionState
-from agent_browser_mesh.guardrails import BrowserGuardrails, SecurityVerdict
-from agent_browser_mesh.dom_compiler import DOMCompiler, DOMDelta
-from agent_browser_mesh.fingerprint import SemanticAnchor, AnchorRegistry, create_semantic_anchor
-from agent_browser_mesh.actions import ActionExecutor, ActionResult
-from agent_browser_mesh.mcp_server import MCPServer
+from .core import (
+    ActionExecutor,
+    ActionResult,
+    AnchorRegistry,
+    BrowserGuardrails,
+    BrowserMesh,
+    BrowserSessionState,
+    DOMCompiler,
+    DOMDelta,
+    SecurityVerdict,
+    SemanticAnchor,
+    create_semantic_anchor,
+)
+from .serve import BrowserTelemetry, HealthMonitor, HealthSnapshot, MCPServer
+from .tools import BenchmarkMatrix, BrowserDoctor, DoctorReport, MatrixRow
 
 __all__ = [
     "BrowserMesh",
@@ -22,4 +31,12 @@ __all__ = [
     "ActionExecutor",
     "ActionResult",
     "MCPServer",
+    "HealthMonitor",
+    "HealthSnapshot",
+    "BrowserTelemetry",
+    "BrowserDoctor",
+    "DoctorReport",
+    "BenchmarkMatrix",
+    "MatrixRow",
+    "__version__",
 ]
